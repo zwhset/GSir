@@ -156,7 +156,7 @@ class Users(Mysql):
                    username=username)
         data = self.fetchone(query)
 
-        return bool(data.get('id', 0)) # uid
+        return data.get('id', 0) # uid
 
     def today_is_sign(self, uid):
         '''用户今天是否签过到'''
@@ -170,6 +170,7 @@ class Users(Mysql):
             user_id = {uid}
         '''.format(uid=uid)
         signed = self.fetchone(query)
+        print(uid)
         return bool(signed)
 
     def sign(self, username):
