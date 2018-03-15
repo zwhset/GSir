@@ -6,7 +6,7 @@ from __future__ import print_function
 
     Gsir 启动入口
 
-    :copyright: (c) YEAR by zwhset.
+    :copyright: (supervisor.conf) YEAR by zwhset.
     :license: GOMEOPS, see LICENSE_FILE for more details.
 """
 import sys

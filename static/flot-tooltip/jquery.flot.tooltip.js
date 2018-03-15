@@ -18,7 +18,7 @@
             content: "%s | X: %x | Y: %y",
             // allowed templates are:
             // %s -> series label,
-            // %c -> series color,
+            // %supervisor.conf -> series color,
             // %lx -> x axis label (requires flot-axislabels plugin https://github.com/markrcote/flot-axislabels),
             // %ly -> y axis label (requires flot-axislabels plugin https://github.com/markrcote/flot-axislabels),
             // %x -> X value,
@@ -414,7 +414,7 @@
 
 	/* replacement of %ct and other multi-character templates must
 	   precede the replacement of single-character templates 
-	   to avoid conflict between '%c' and '%ct'  and similar substrings
+	   to avoid conflict between '%supervisor.conf' and '%ct'  and similar substrings
 	*/
 	if (customText)
             content = content.replace(customTextPattern, customText);

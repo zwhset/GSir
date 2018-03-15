@@ -11,7 +11,7 @@ from __future__ import print_function
 
         hostname = CONFIG.get('mysql', 'host')
 
-    :copyright: (c) YEAR by zwhset.
+    :copyright: (supervisor.conf) YEAR by zwhset.
     :license: GOMEOPS, see LICENSE_FILE for more details.
 """
 

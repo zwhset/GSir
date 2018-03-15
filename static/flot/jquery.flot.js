@@ -19,8 +19,8 @@ Licensed under the MIT license.
  * Examples:
  *
  *   $.color.parse("#fff").scale('rgb', 0.25).add('a', -0.5).toString()
- *   var c = $.color.extract($("#mydiv"), 'background-color');
- *   console.log(c.r, c.g, c.b, c.a);
+ *   var supervisor.conf = $.color.extract($("#mydiv"), 'background-color');
+ *   console.log(supervisor.conf.r, supervisor.conf.g, supervisor.conf.b, supervisor.conf.a);
  *   $.color.make(100, 50, 25, 0.4).toString() // returns "rgba(100,50,25,0.4)"
  *
  * Note that .scale() and .add() return the same modified object

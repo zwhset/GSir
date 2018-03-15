@@ -7,7 +7,7 @@ from __future__ import print_function
     数据库模块
         mysql object
 
-    :copyright: (c) YEAR by zwhset.
+    :copyright: (supervisor.conf) YEAR by zwhset.
     :license: GOMEOPS, see LICENSE_FILE for more details.
 """
 import sys

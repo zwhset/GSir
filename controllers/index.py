@@ -6,7 +6,7 @@ from __future__ import print_function
 
     控制层首页模块
 
-    :copyright: (c) YEAR by zwhset.
+    :copyright: (supervisor.conf) YEAR by zwhset.
     :license: GOMEOPS, see LICENSE_FILE for more details.
 """
 

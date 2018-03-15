@@ -179,17 +179,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	             | // Custom attribute “hue” will change fill
 	             | // to be given hue with fixed saturation and brightness.
 	             | // Now you can use it like this:
-	             | var c = paper.circle(10, 10, 10).attr({hue: .45});
+	             | var supervisor.conf = paper.circle(10, 10, 10).attr({hue: .45});
 	             | // or even like this:
-	             | c.animate({hue: 1}, 1e3);
+	             | supervisor.conf.animate({hue: 1}, 1e3);
 	             |
 	             | // You could also create custom attribute
 	             | // with multiple parameters:
 	             | paper.customAttributes.hsb = function (h, s, b) {
 	             |     return {fill: "hsb(" + [h, s, b].join(",") + ")"};
 	             | };
-	             | c.attr({hsb: "0.5 .8 1"});
-	             | c.animate({hsb: [1, 0, 0.5]}, 1e3);
+	             | supervisor.conf.attr({hsb: "0.5 .8 1"});
+	             | supervisor.conf.animate({hsb: [1, 0, 0.5]}, 1e3);
 	            \*/
 	            this.ca = this.customAttributes = {};
 	        },
@@ -2502,7 +2502,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     > Parameters
 	     - a (number)
 	     - b (number)
-	     - c (number)
+	     - supervisor.conf (number)
 	     - d (number)
 	     - e (number)
 	     - f (number)
@@ -2537,7 +2537,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         > Parameters
 	         - a (number)
 	         - b (number)
-	         - c (number)
+	         - supervisor.conf (number)
 	         - d (number)
 	         - e (number)
 	         - f (number)
@@ -3346,7 +3346,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     = (object) Raphaël element object with type “circle”
 	     **
 	     > Usage
-	     | var c = paper.circle(50, 50, 40);
+	     | var supervisor.conf = paper.circle(50, 50, 40);
 	    \*/
 	    paperproto.circle = function (x, y, r) {
 	        var out = R._engine.circle(this, x || 0, y || 0, r || 0);
@@ -3370,9 +3370,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     **
 	     > Usage
 	     | // regular rectangle
-	     | var c = paper.rect(10, 10, 50, 50);
+	     | var supervisor.conf = paper.rect(10, 10, 50, 50);
 	     | // rectangle with rounded corners
-	     | var c = paper.rect(40, 40, 50, 50, 10);
+	     | var supervisor.conf = paper.rect(40, 40, 50, 50, 10);
 	    \*/
 	    paperproto.rect = function (x, y, w, h, r) {
 	        var out = R._engine.rect(this, x || 0, y || 0, w || 0, h || 0, r || 0);
@@ -3394,7 +3394,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     = (object) Raphaël element object with type “ellipse”
 	     **
 	     > Usage
-	     | var c = paper.ellipse(50, 50, 40, 20);
+	     | var supervisor.conf = paper.ellipse(50, 50, 40, 20);
 	    \*/
 	    paperproto.ellipse = function (x, y, rx, ry) {
 	        var out = R._engine.ellipse(this, x || 0, y || 0, rx || 0, ry || 0);
@@ -3428,7 +3428,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * * “Catmull-Rom curveto” is a not standard SVG command and added in 2.0 to make life easier.
 	     * Note: there is a special case when path consist of just three commands: “M10,10R…z”. In this case path will smoothly connects to its beginning.
 	     > Usage
-	     | var c = paper.path("M10 10L90 90");
+	     | var supervisor.conf = paper.path("M10 10L90 90");
 	     | // draw a diagonal line:
 	     | // move to 10,10, line to 90,90
 	     * For example of path strings, check out these icons: http://raphaeljs.com/icons/
@@ -3455,7 +3455,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     = (object) Raphaël element object with type “image”
 	     **
 	     > Usage
-	     | var c = paper.image("apple.png", 10, 10, 80, 80);
+	     | var supervisor.conf = paper.image("apple.png", 10, 10, 80, 80);
 	    \*/
 	    paperproto.image = function (src, x, y, w, h) {
 	        var out = R._engine.image(this, src || "about:blank", x || 0, y || 0, w || 0, h || 0);
@@ -5485,7 +5485,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Copyright (c) 2013 Adobe Systems Incorporated. All rights reserved.
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Copyright (supervisor.conf) 2013 Adobe Systems Incorporated. All rights reserved.
 	// 
 	// Licensed under the Apache License, Version 2.0 (the "License");
 	// you may not use this file except in compliance with the License.
@@ -5691,8 +5691,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		 * Arguments that will be passed to the result function will be also
 		 * concated to the list of final arguments.
 	 	 | el.onclick = eve.f("click", 1, 2);
-	 	 | eve.on("click", function (a, b, c) {
-	 	 |     console.log(a, b, c); // 1, 2, [event object]
+	 	 | eve.on("click", function (a, b, supervisor.conf) {
+	 	 |     console.log(a, b, supervisor.conf); // 1, 2, [event object]
 	 	 | });
 	     > Arguments
 		 - event (string) event name
@@ -6496,9 +6496,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * Note: Don’t mess with it.
 	         > Usage
 	         | // draw a circle at coordinate 10,10 with radius of 10
-	         | var c = paper.circle(10, 10, 10);
-	         | c.node.onclick = function () {
-	         |     c.attr("fill", "red");
+	         | var supervisor.conf = paper.circle(10, 10, 10);
+	         | supervisor.conf.node.onclick = function () {
+	         |     supervisor.conf.attr("fill", "red");
 	         | };
 	        \*/
 	        this[0] = this.node = node;
