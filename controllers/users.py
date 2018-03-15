@@ -81,3 +81,17 @@ def register():
         return redirect('/index')
 
     return render_template('register.html')
+
+@b_users.route('/sign')
+@users.is_login
+def sign():
+    '''签到逻辑'''
+
+    username = session['username']
+    ok, message = user.sign(username)
+
+    code = 0
+    if not ok:
+        code = 1
+
+    return jsonify(code=code, message=message)

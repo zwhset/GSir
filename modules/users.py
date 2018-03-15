@@ -142,3 +142,65 @@ class Users(Mysql):
 
     def encry_password(self, password):
         return md5(password.encode('utf-8')).hexdigest()
+
+    def get_uid(self, username):
+        '''通过用户名获取用户uid'''
+        query = '''
+          SELECT 
+            id 
+          FROM 
+            {table_name} 
+          WHERE 
+            username="{username}"
+        '''.format(table_name=self._table_name,
+                   username=username)
+        data = self.fetchone(query)
+
+        return bool(data.get('id', 0)) # uid
+
+    def today_is_sign(self, uid):
+        '''用户今天是否签过到'''
+        query = '''
+          SELECT 
+            id 
+          FROM 
+            sign 
+          WHERE 
+            TO_DAYS(sign_time)=to_days(now()) AND 
+            user_id = {uid}
+        '''.format(uid=uid)
+        signed = self.fetchone(query)
+        return bool(signed)
+
+    def sign(self, username):
+        '''签到方法'''
+        uid = self.get_uid(username)
+        if not uid:
+            return False, '您的用户id未找到'
+        if self.today_is_sign(uid):
+            return False, '您已经签过到啦'
+
+        query = '''INSERT INTO sign(user_id) VALUES({uid})'''.format(uid=uid)
+        if self.write(query):
+            return True, '签到成功'
+        else:
+            return False, '签到失败'
+
+    def get_sign_count(self, uid):
+        '''获取用户签到次数'''
+        query = '''
+            SELECT 
+              count(*) 
+            FROM 
+              sign
+            WHERE
+              s.user_id = {uid}
+        '''.format(uid=uid)
+        data = self.fetchone(query)
+
+        try: # 获取不到索引即给0次
+            count = data[0]
+        except:
+            count = 0
+
+        return count

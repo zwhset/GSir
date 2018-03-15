@@ -12,7 +12,7 @@ from __future__ import print_function
 
 import sys
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session
 from modules import users
 
 if sys.version_info[0] < 3:
@@ -21,9 +21,15 @@ if sys.version_info[0] < 3:
 
 b_index = Blueprint('b_index', __name__)
 
+user = users.Users()
+
 @b_index.route('/')
 @b_index.route('/index')
 @users.is_login
 def index():
     '''首页'''
-    return render_template('base.html')
+
+    username = session['username'] # 过登陆装饰器所以不用验证
+    signed = user.today_is_sign(user.get_uid(username))
+
+    return render_template('index.html', signed=signed)

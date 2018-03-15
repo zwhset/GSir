@@ -42,6 +42,7 @@ class Mysql(object):
 
     def fetchone(self, query):
         '''获取数据库的一条记录'''
+        self._config_parse()
         self._execute(query)
         return self.cursor.fetchone()
 
