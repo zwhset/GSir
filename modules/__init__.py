@@ -4,7 +4,7 @@ from __future__ import print_function
     package.module
     ~~~~~~~~~~~~~~
 
-    A brief description goes here.
+    modules 模型层
 
     :copyright: (c) YEAR by zwhset.
     :license: GOMEOPS, see LICENSE_FILE for more details.
