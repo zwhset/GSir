@@ -1,17 +1,18 @@
-# python GSir Test
+### GSir
 
-## Install
+### 安装运行
+### 1. 导入数据库:
+```mysql
+> CREATE DATABASE gsir CHARSET utf8;
+# mysql -u{user} -p{password} gsir < gsir.sql
+```
+### 2. 安装依赖包
 ```
 pip install -r requirements.txt
 ```
 
-## RUN
-### python3
-```
-python3 main.py
-```
+### 3.运行
 
-### python2
 ```
-python2 main.py
+python main.py # or python3 main.py
 ```
